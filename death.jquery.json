@@ -1,0 +1,27 @@
+{
+    "name": "death",
+    "title": "Death Editor Advanced Text HTML",
+    "description": "jQuery plugin for advanced text editor.",
+    "keywords": [
+        "editor",
+        "rich-text"
+    ],
+    "version": "0.0.0",
+    "author": {
+        "name": "Jesús Hernández Gormaz",
+        "email": "jhg.jesus@gmail.com"
+    },
+    "licenses": [
+        {
+            "type": "GPL",
+            "url": "http://www.gnu.org/licenses/gpl.html"
+        }
+    ],
+    "bugs": "https://github.com/jhg/death-editor-advanced-text-html/issues",
+    "homepage": "https://github.com/jhg/death-editor-advanced-text-html",
+    "docs": "https://github.com/jhg/death-editor-advanced-text-html/wiki",
+    "download": "https://github.com/jhg/death-editor-advanced-text-html/archive/master.zip",
+    "dependencies": {
+        "jquery": ">=1.5"
+    }
+}
