@@ -1,12 +1,12 @@
 {
     "name": "death",
     "title": "Death Editor Advanced Text HTML",
-    "description": "jQuery plugin for advanced text editor.",
+    "description": "jQuery plugin for advanced text editor. Is a simple editor that can custom very easy, in future version the editor will have more advance features.",
     "keywords": [
         "editor",
         "rich-text"
     ],
-    "version": "0.0.0",
+    "version": "0.0.1",
     "author": {
         "name": "Jesús Hernández Gormaz",
         "email": "jhg.jesus@gmail.com"
