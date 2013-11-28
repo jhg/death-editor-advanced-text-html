@@ -1,0 +1,87 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Documento sin título</title>
+<style>
+div.controls {
+border: 1px #000 solid;
+width: 40em;
+height: 2em;
+box-sizing: border-box;
+}
+.editor {
+border: 1px #000 solid;
+width: 40em;
+height: 20em;
+padding: 0.5em;
+box-sizing: border-box;
+resize: both;
+ overflow: auto;
+}
+</style>
+<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+<script>
+function formatText(cmd){
+    document.execCommand(cmd, null, null);
+}
+function insertarImagen(){
+    var u;
+    if(!(u=prompt('ingresar url','http://')))return;
+     document.getElementById('pp').focus();
+     document.execCommand("InsertImage",false,u);
+} 
+</script>
+</head>
+
+<body>
+<form action="" method="get">
+  <input name="input" type="button" onclick="formatText('bold')" value="NEGRITA" /><input name="input" type="button" onclick="formatText('italic')" value="CURSIVA" /><input name="input" type="button" onclick="formatText('underline')" value="SUBRAYADO" /><input name="input" type="button" onclick="insertarImagen()" value="INSERTAR IMAGEN" />
+</form>
+<textarea id="te">ejemplo</textarea>
+<script>
+(function($){
+  $.fn.editor = function(options) {
+    var settings = $.extend({}, $.fn.editor.defaults, options);
+    this.addClass(settings.class_editor).after(settings.tag)//.css('display', 'none')
+        .keyup(refreshEditionArea).each(refreshEditionArea)
+        .next().attr('contenteditable', true)
+        .focusout(refreshTextArea).keyup(refreshTextArea).change(refreshTextArea);
+    this.next().addClass(settings.class_editor);
+    // If controls is true then make controls layer
+    if (settings.controls) {
+      this.before(settings.tag).prev().addClass(settings.class_controls);
+    }
+    return this;
+  };
+  // Refresh textarea
+  function refreshTextArea(){
+      var t = $(this);
+      t.prev()[0].value = t.html();
+  };
+  // Refresh editionArea
+  function refreshEditionArea(){
+      $(this).next().html(this.value);
+  };
+  // Configuration by default
+  $.fn.editor.defaults = {
+      controls: true,
+      class_controls: 'controls',
+      class_editor: 'editor',
+      tag: '<div/>',
+  };
+}(jQuery));
+
+function e(query){
+  $(query).after('<div></div>').next().attr('contenteditable', true).focusout(function(){
+    $(this).prev().html($(this).html());
+  }).each(function(){
+    $(this).html($(this).prev().html());
+  });
+  /*$(query).change(function(){
+    $(this).next().html($(this).html());
+  });*/
+}
+$('#te').editor();
+</script>
+</body>
+</html>
