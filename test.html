@@ -21,24 +21,13 @@ resize: both;
 </style>
 <script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
 <script src="jquery.death.js"></script>
-<script>
-function formatText(cmd){
-    document.execCommand(cmd, null, null);
-}
-function insertarImagen(){
-    var u;
-    if(!(u=prompt('ingresar url','http://')))return;
-     document.getElementById('pp').focus();
-     document.execCommand("InsertImage",false,u);
-} 
-</script>
 </head>
-
-<body>
-<form action="" method="get">
-  <input name="input" type="button" onclick="formatText('bold')" value="NEGRITA" /><input name="input" type="button" onclick="formatText('italic')" value="CURSIVA" /><input name="input" type="button" onclick="formatText('underline')" value="SUBRAYADO" /><input name="input" type="button" onclick="insertarImagen()" value="INSERTAR IMAGEN" />
-</form>
-<textarea>ejemplo</textarea>
+<textarea><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate augue non bibendum dapibus. Phasellus fermentum nulla non ultricies vestibulum. Curabitur dictum nisl quis condimentum tempus. Integer et libero pellentesque, rutrum nibh in, auctor elit. Pellentesque sit amet facilisis ante, quis dictum lectus. Morbi nec dui enim. Duis consectetur tellus a dignissim sollicitudin. Quisque interdum id nisi vitae mattis. Curabitur non tortor a arcu gravida elementum ut a nisi. Sed porta turpis in elementum vulputate.</p>
+<p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Vestibulum justo sapien, pulvinar in fermentum sit amet, imperdiet quis nisl. Sed luctus vel enim id dignissim. Nulla sit amet vehicula nisl. Donec tincidunt, arcu at gravida posuere, nisl libero vehicula nunc, id accumsan urna dui volutpat magna. Mauris sit amet dolor leo. Donec a rutrum tellus, nec feugiat arcu. Mauris turpis magna, egestas non dolor sed, aliquet tempus libero. Praesent volutpat massa vel felis feugiat, non adipiscing orci cursus. Nullam in quam vehicula, rutrum erat vitae, tempus est. Morbi at velit non risus porttitor iaculis.</p>
+<p>Aliquam erat volutpat. Nullam fermentum lacus non cursus tristique. Suspendisse lacinia metus enim, a condimentum neque condimentum at. Pellentesque purus dui, aliquam sit amet rutrum nec, imperdiet ut odio. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Duis placerat faucibus massa nec sollicitudin. Aliquam interdum orci id nunc commodo congue. Nullam pellentesque nisl sed tellus ultricies, ut interdum tellus feugiat. Mauris id dui eu turpis interdum accumsan. Sed eget laoreet dui. Duis elementum elit blandit libero egestas sollicitudin. Duis fringilla orci vel tempor molestie. Sed varius interdum velit eu sagittis.</p>
+<p>Nullam faucibus adipiscing velit, tristique ornare eros dignissim a. Duis venenatis laoreet hendrerit. Nulla id eleifend mi. Fusce sagittis egestas mi. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis non justo varius, gravida tellus a, malesuada sem. Morbi in tortor luctus, accumsan augue sit amet, tempor lorem. Sed dignissim metus ac sapien viverra semper.</p>
+<p>Donec quis libero eget lorem egestas suscipit. Sed accumsan nisi ante, ac congue est tincidunt at. Phasellus vel tortor id lorem tristique mollis ac eu mauris. Cras accumsan sapien eu lorem vulputate mollis. Vivamus euismod ante et sem vehicula, eget sagittis metus dapibus. Vivamus pretium facilisis feugiat. Cras in arcu eu erat venenatis ullamcorper et eu velit. Mauris bibendum nibh nec cursus luctus. Nulla volutpat libero sit amet lectus pulvinar, sit amet porttitor nunc auctor. Fusce faucibus at ante in cursus.</p>
+</textarea>
 <script>
 $('textarea').editor();
 </script>
