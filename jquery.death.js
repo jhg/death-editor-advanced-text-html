@@ -62,11 +62,27 @@ $.fn.editor.configAction = function(){
 
 // Configuration by default
 $.fn.editor.defaults = {
-    controls: [{text:'B',command:'bold'},
+    controls: [{text:'<',command:'redo'},
+               {text:'>',command:'undo'},
+               {text:'A',command:'selectAll'},
+               {text:'B',command:'bold'},
                {text:'I',command:'italic'},
                {text:'U',command:'underline'},
+               {text:'L',command:'justifyLeft'},
+               {text:'C',command:'justifyCenter'},
+               {text:'R',command:'justifyRight'},
+               {text:'F',command:'justifyFull'},
                {text:'img',command:'insertImage',action:function(){document.execCommand(this.command, null, prompt('URL:'));}},
                {text:'enl',command:'createLink',action:function(){document.execCommand(this.command, null, prompt('URL:'));}},
+               {text:'print',command:'printDocument',config:function(control){
+                   control.click(function(){
+                     var code = $(this).parent().next().next().html();
+                     var oPrntWin = window.open("","_blank","width=450,height=470,left=400,top=100,menubar=yes,toolbar=no,location=no,scrollbars=yes");
+                     oPrntWin.document.open();
+                     oPrntWin.document.write("<!doctype html><html><head><title>Print<\/title><\/head><body onload=\"print();\">" + code + "<\/body><\/html>");
+                     oPrntWin.document.close();
+                   });
+               }},
                {text:'</>',command:'htmlEditor',config:function(control){
                    control.click(function(){
                      var textarea = $(this).parent().next();
